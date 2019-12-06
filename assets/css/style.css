@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#memory-list-container {
+  display: flex;
+}
+
+#memory-list-container li {
+  width: 50px;
+  border: 1px solid #ccc;
+  list-style-type: none;
+}
+
+.button.submit-memory {
+  width: 150px;
+  height: 40px;
+  color: #fff;
+  background-color: #111;
+  border-radius: 5px;
+}
+.button:hover {
+  background-color: #222;
+  transition: 0.2s;
+}
+.button {
+  outline: none;
+}
