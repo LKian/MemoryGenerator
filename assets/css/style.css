@@ -5,27 +5,78 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#memory-list-container {
+.container {
   display: flex;
+  justify-content: center;
 }
 
-#memory-list-container li {
-  width: 50px;
+.app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#form {
+  display: flex;
+  align-items: center;
+}
+
+.memory-input {
+  height: 40px;
+}
+
+.memory-input::placeholder {
+  padding-left: 10px;
+}
+
+li {
+  min-width: 150px;
   border: 1px solid #ccc;
   list-style-type: none;
 }
 
-.button.submit-memory {
+.button {
   width: 150px;
   height: 40px;
   color: #fff;
-  background-color: #111;
-  border-radius: 5px;
+  outline: none;
 }
-.button:hover {
-  background-color: #222;
+
+.button:hover,
+.button:focus,
+.button:active {
   transition: 0.2s;
 }
-.button {
-  outline: none;
+
+.button.submit-memory {
+  background-color: #111;
+  border: 6px solid #111;
+  border-radius: 0 5px 5px 0;
+}
+
+.button.submit-memory:hover {
+  background-color: #333;
+}
+
+.button.delete-memory {
+  background-color: #900;
+  border: 6px solid #900;
+  border-radius: 5px;
+}
+
+.button.delete-memory:hover {
+  background-color: #800;
+}
+
+.button.show-random-memory {
+  background-color: #000;
+  border: 6px solid #000;
+  border-radius: 5px;
+}
+
+#memory-ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  border: 2px dashed red;
 }
