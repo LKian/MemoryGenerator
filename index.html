@@ -8,21 +8,37 @@
     <title>Memory Generator</title>
   </head>
   <body>
-    <form id="form">
-      <input
-        type="text"
-        class="memory-input"
-        name="memory_name"
-        placeholder="Enter a memory"
-      />
+    <div class="container">
+      <div class="app">
+        <form id="form">
+          <input
+            type="text"
+            class="memory-input"
+            name="memory_name"
+            placeholder="Enter a memory"
+          />
 
-      <button class="button submit-memory" type="submit" value="Submit">
-        Send
-      </button>
-    </form>
+          <button class="button submit-memory" type="submit" value="Submit">
+            Send
+          </button>
+        </form>
+        <button class="button delete-memory" value="Delete">
+          Erase All Memories
+        </button>
 
-    <ul id="memory-ul"></ul>
+        <button class="button show-random-memory" value="Random">
+          Show me a random memory
+        </button>
 
+        <ul id="memory-ul">
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>four</li>
+          <li>five</li>
+        </ul>
+      </div>
+    </div>
     <script type="text/javascript" src="./assets/js/index.js"></script>
   </body>
 </html>
