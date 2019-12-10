@@ -8,31 +8,84 @@
 .container {
   display: flex;
   justify-content: center;
+  height: 100vh;
 }
 
 .app {
   display: flex;
   align-items: center;
   flex-direction: column;
+  border: 3px solid blue;
+  justify-content: center;
+  width: 75vw;
+}
+
+.app-display {
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
 }
 
 #form {
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .memory-input {
   height: 40px;
-}
-
-.memory-input::placeholder {
   padding-left: 10px;
 }
 
+.warning-message p {
+  font-style: italic;
+  color: #900;
+  padding-top: 15px;
+}
+
+.button-controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.button-controls button {
+  width: 80%;
+}
+
+.random-memory {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 2px #ccc;
+  margin: 50px auto;
+  padding: 15px;
+  min-height: 100px;
+  width: 75%;
+}
+
+.random-memory h3 {
+  font-style: italic;
+  font-weight: 300;
+  padding: 0 15px;
+}
+
+.random-memory span {
+  font-size: 30px;
+  font-family: Pacifico;
+}
+
+.random-memory span:last-child {
+  align-self: flex-end;
+}
+
 li {
-  min-width: 150px;
   border: 1px solid #ccc;
   list-style-type: none;
+  margin: 5px;
+  padding: 5px;
 }
 
 .button {
@@ -45,38 +98,39 @@ li {
 .button:hover,
 .button:focus,
 .button:active {
+  cursor: pointer;
   transition: 0.2s;
 }
 
-.button.submit-memory {
+.button.submit-memory,
+.button.show-random-memory {
   background-color: #111;
   border: 6px solid #111;
   border-radius: 0 5px 5px 0;
 }
 
-.button.submit-memory:hover {
+.button.submit-memory:hover,
+.button.show-random-memory:hover {
   background-color: #333;
+  border-color: #333;
 }
 
 .button.delete-memory {
   background-color: #900;
   border: 6px solid #900;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
 }
 
 .button.delete-memory:hover {
   background-color: #800;
+  border-color: #800;
 }
 
-.button.show-random-memory {
-  background-color: #000;
-  border: 6px solid #000;
-  border-radius: 5px;
+.random-memory-container {
+  padding: 20px 0;
 }
 
 #memory-ul {
   display: flex;
   flex-wrap: wrap;
-  width: 80vw;
-  border: 2px dashed red;
 }
