@@ -88,6 +88,10 @@ li {
   padding: 5px;
 }
 
+li:hover {
+  cursor: pointer;
+}
+
 .button {
   width: 150px;
   height: 40px;
@@ -115,13 +119,13 @@ li {
   border-color: #333;
 }
 
-.button.delete-memory {
+.button.delete-all-memories-button {
   background-color: #900;
   border: 6px solid #900;
   border-radius: 5px 0 0 5px;
 }
 
-.button.delete-memory:hover {
+.button.delete-all-memories-button:hover {
   background-color: #800;
   border-color: #800;
 }
@@ -133,4 +137,9 @@ li {
 #memory-ul {
   display: flex;
   flex-wrap: wrap;
+}
+
+.forgotten-memory {
+  text-decoration: line-through;
+  color: #888;
 }
