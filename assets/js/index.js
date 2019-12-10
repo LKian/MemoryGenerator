@@ -1,7 +1,7 @@
 const form = document.querySelector("#form");
 const memoryInput = document.querySelector(".memory-input");
 const allMemories = document.getElementById("memory-ul");
-const deleteButton = document.querySelector(".delete-memory");
+const eraseAllButton = document.querySelector(".delete-all-memories-button");
 const showRandomMemoryButton = document.querySelector(".show-random-memory");
 const randomMemory = document.querySelector(".random-memory h3");
 
@@ -15,9 +15,9 @@ form.addEventListener("submit", function(e) {
   }
 });
 
-deleteButton.addEventListener("click", function(e) {
+eraseAllButton.addEventListener("click", function(e) {
   e.preventDefault();
-  deleteMemories();
+  eraseAllMemories();
 });
 
 showRandomMemoryButton.addEventListener("click", function(e) {
@@ -30,22 +30,26 @@ function addMemory() {
   let warningMessage = document.querySelector(".warning-message p");
   if (inputValue.length > 0) {
     let singleMemoryLi = document.createElement("li");
+    let singleMemorySpan = document.createElement("span");
     singleMemoryLi.setAttribute("class", "single-memory");
     inputValue = document.createTextNode(inputValue);
+    singleMemoryLi.appendChild(singleMemorySpan);
     singleMemoryLi.appendChild(inputValue);
     allMemories.appendChild(singleMemoryLi);
+
     form.reset();
     warningMessage.innerHTML = "";
     singleMemoryLi.addEventListener("click", function(e) {
       e.preventDefault();
-      strikethroughMemory();
+      let currentLi = e.currentTarget;
+      currentLi.classList.toggle("forgotten-memory");
     });
   } else {
     warningMessage.innerHTML = "Please enter a memory";
   }
 }
 
-function deleteMemories() {
+function eraseAllMemories() {
   for (
     let memoryCount = allMemories.children.length - 1;
     memoryCount >= 0;
@@ -55,10 +59,6 @@ function deleteMemories() {
   }
 }
 
-function strikethroughMemory() {
-  console.log("STRIKEthrough");
-}
-
 function showRandomMemory() {
   let memoryCount = allMemories.children.length;
   let randomMemoryQuote = document.querySelectorAll(".random-memory span");
@@ -66,7 +66,6 @@ function showRandomMemory() {
   randomMemory.innerHTML = allMemories.children[randomNumber].innerHTML;
   randomMemoryQuote[0].innerHTML = '"';
   randomMemoryQuote[1].innerHTML = '"';
-  console.log("Index: ", randomNumber);
   console.log(
     "Quote @ Index",
     randomNumber,
@@ -74,3 +73,5 @@ function showRandomMemory() {
     allMemories.children[randomNumber].innerHTML
   );
 }
+
+function forgetMemory() {}
