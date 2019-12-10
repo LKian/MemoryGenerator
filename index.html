@@ -11,32 +11,41 @@
     <div class="container">
       <div class="app">
         <form id="form">
-          <input
-            type="text"
-            class="memory-input"
-            name="memory_name"
-            placeholder="Enter a memory"
-          />
+          <div class="input-container">
+            <input
+              type="text"
+              class="memory-input"
+              name="memory_name"
+              placeholder="Enter a memory"
+            />
 
-          <button class="button submit-memory" type="submit" value="Submit">
-            Send
-          </button>
+            <button class="button submit-memory" type="submit" value="Submit">
+              Send
+            </button>
+          </div>
+          <div class="warning-message">
+            <p></p>
+          </div>
         </form>
-        <button class="button delete-memory" value="Delete">
-          Erase All Memories
-        </button>
+        <div class="button-controls">
+          <button class="button delete-memory" value="Delete">
+            Erase All Memories
+          </button>
 
-        <button class="button show-random-memory" value="Random">
-          Show me a random memory
-        </button>
-
-        <ul id="memory-ul">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>four</li>
-          <li>five</li>
-        </ul>
+          <button class="button show-random-memory" value="Random">
+            Show me a random memory
+          </button>
+        </div>
+        <div class="app-display">
+          <div class="random-memory-container">
+            <div class="random-memory">
+              <span></span>
+              <h3></h3>
+              <span></span>
+            </div>
+          </div>
+          <ul id="memory-ul"></ul>
+        </div>
       </div>
     </div>
     <script type="text/javascript" src="./assets/js/index.js"></script>
