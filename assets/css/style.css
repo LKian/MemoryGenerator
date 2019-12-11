@@ -8,7 +8,6 @@
 .container {
   display: flex;
   justify-content: center;
-  height: 100vh;
 }
 
 .app {
@@ -18,6 +17,7 @@
   border: 3px solid blue;
   justify-content: center;
   width: 75vw;
+  min-height: 100vh;
 }
 
 .app-display {
@@ -26,6 +26,13 @@
 
 .input-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 801px) {
+  .input-container {
+    flex-direction: row;
+  }
 }
 
 #form {
@@ -35,8 +42,12 @@
 }
 
 .memory-input {
-  height: 40px;
+  height: 50px;
+  border: 1px solid #ccc;
   padding-left: 10px;
+}
+.memory-input:focus {
+  outline: 1px solid #bbb;
 }
 
 .warning-message p {
@@ -47,19 +58,22 @@
 
 .button-controls {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 15px;
 }
-
-.button-controls button {
-  width: 80%;
+@media (min-width: 801px) {
+  .button-controls {
+    flex-direction: row;
+    width: 310px;
+  }
 }
 
 .random-memory {
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
-  box-shadow: 2px 2px 2px #ccc;
+  box-shadow: 2px 2px 3px #eee;
   margin: 50px auto;
   padding: 15px;
   min-height: 100px;
@@ -87,47 +101,63 @@ li {
   margin: 5px;
   padding: 5px;
 }
-
 li:hover {
   cursor: pointer;
 }
 
 .button {
-  width: 150px;
-  height: 40px;
-  color: #fff;
+  width: 140px;
+  height: 50px;
   outline: none;
+  background-color: transparent;
+  color: #111;
+  width: 150px;
 }
-
-.button:hover,
-.button:focus,
-.button:active {
+.button:hover, .button:active {
   cursor: pointer;
   transition: 0.2s;
+  color: #eee;
+}
+.button:focus {
+  color: #111;
+  background-color: #eee;
 }
 
-.button.submit-memory,
-.button.show-random-memory {
+.button.submit-memory {
+  border: 5px solid #111;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+.button.submit-memory:hover {
   background-color: #111;
-  border: 6px solid #111;
-  border-radius: 0 5px 5px 0;
+  transition: 0.2s;
+  color: #eee;
+}
+@media (min-width: 801px) {
+  .button.submit-memory {
+    border-radius: 0 5px 5px 0;
+    margin: 0;
+  }
 }
 
-.button.submit-memory:hover,
+.button.show-random-memory {
+  border: 5px solid #111;
+  border-radius: 5px;
+}
 .button.show-random-memory:hover {
   background-color: #333;
-  border-color: #333;
+  color: #eee;
 }
 
 .button.delete-all-memories-button {
-  background-color: #900;
-  border: 6px solid #900;
-  border-radius: 5px 0 0 5px;
+  border: 5px solid #900;
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 .button.delete-all-memories-button:hover {
   background-color: #800;
-  border-color: #800;
+  color: #eee;
 }
 
 .random-memory-container {
@@ -143,3 +173,5 @@ li:hover {
   text-decoration: line-through;
   color: #888;
 }
+
+/*# sourceMappingURL=style.css.map */

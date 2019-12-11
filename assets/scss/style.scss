@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid blue;
+  justify-content: center;
+  width: 75vw;
+  min-height: 100vh;
+}
+
+.app-display {
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 801px) {
+    // 801px and up
+    flex-direction: row;
+  }
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.memory-input {
+  height: 50px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+
+  &:focus {
+    outline: 1px solid #bbb;
+  }
+}
+
+.warning-message p {
+  font-style: italic;
+  color: #900;
+  padding-top: 15px;
+}
+
+.button-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px;
+
+  @media (min-width: 801px) {
+    // 801px and up
+    flex-direction: row;
+    width: 310px;
+  }
+}
+
+.random-memory {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 3px #eee;
+  margin: 50px auto;
+  padding: 15px;
+  min-height: 100px;
+  width: 75%;
+}
+
+.random-memory h3 {
+  font-style: italic;
+  font-weight: 300;
+  padding: 0 15px;
+}
+
+.random-memory span {
+  font-size: 30px;
+  font-family: Pacifico;
+}
+
+.random-memory span:last-child {
+  align-self: flex-end;
+}
+
+li {
+  border: 1px solid #ccc;
+  list-style-type: none;
+  margin: 5px;
+  padding: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button {
+  width: 140px;
+  height: 50px;
+  outline: none;
+  background-color: transparent;
+  color: #111;
+  width: 150px;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    transition: 0.2s;
+    color: #eee;
+  }
+
+  &:focus {
+    color: #111;
+    background-color: #eee;
+  }
+}
+
+.button.submit-memory {
+  border: 5px solid #111;
+  border-radius: 5px;
+  margin-top: 30px;
+
+  &:hover {
+    background-color: #111;
+    transition: 0.2s;
+    color: #eee;
+  }
+
+  @media (min-width: 801px) {
+    // 801px and up
+    border-radius: 0 5px 5px 0;
+    margin: 0;
+  }
+}
+
+.button.show-random-memory {
+  border: 5px solid #111;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #333;
+    color: #eee;
+  }
+}
+
+.button.delete-all-memories-button {
+  border: 5px solid #900;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.button.delete-all-memories-button {
+  &:hover {
+    background-color: #800;
+    color: #eee;
+  }
+}
+
+.random-memory-container {
+  padding: 20px 0;
+}
+
+#memory-ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.forgotten-memory {
+  text-decoration: line-through;
+  color: #888;
+}
